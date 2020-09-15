@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<div>
+    @* Just use the name of the ViewComponent without the ViewComponent suffix in the name *@
+    @* This construction is also used in the _Layout in the navbar *@
+    <div>
+        <span>As taghelper</span>
+        <vc:demo></vc:demo>
+    </div>
+    <hr/>
+    
+    <div>
+        <span>As Component.InvokeAsync</span>
+        @* Or use the Component InvokeAsync. This method can be used with sync and async Invoke method*@
+        @await Component.InvokeAsync("Demo")
+    </div>
+
+</div>
